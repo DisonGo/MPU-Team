@@ -26,6 +26,7 @@ var LikeButton = function (_React$Component) {
       var _this2 = this;
 
       if (this.state.liked) {
+        this.state.liked = false;
         return 'You liked this.';
       }
 
@@ -42,5 +43,98 @@ var LikeButton = function (_React$Component) {
   return LikeButton;
 }(React.Component);
 
+var Conteiner = function (_React$Component2) {
+  _inherits(Conteiner, _React$Component2);
+
+  function Conteiner(props) {
+    _classCallCheck(this, Conteiner);
+
+    return _possibleConstructorReturn(this, (Conteiner.__proto__ || Object.getPrototypeOf(Conteiner)).call(this, props));
+  }
+
+  return Conteiner;
+}(React.Component);
+
+var BlurExample = function (_React$Component3) {
+  _inherits(BlurExample, _React$Component3);
+
+  function BlurExample(props) {
+    _classCallCheck(this, BlurExample);
+
+    var _this4 = _possibleConstructorReturn(this, (BlurExample.__proto__ || Object.getPrototypeOf(BlurExample)).call(this, props));
+
+    _this4.state = { isOpen: false };
+    _this4.timeOutId = null;
+
+    _this4.onClickHandler = _this4.onClickHandler.bind(_this4);
+    _this4.onBlurHandler = _this4.onBlurHandler.bind(_this4);
+    _this4.onFocusHandler = _this4.onFocusHandler.bind(_this4);
+    return _this4;
+  }
+
+  _createClass(BlurExample, [{
+    key: 'onClickHandler',
+    value: function onClickHandler() {
+      this.setState(function (currentState) {
+        return {
+          isOpen: !currentState.isOpen
+        };
+      });
+    }
+
+    // Мы закрываем выпадающий список по таймеру setTimeout.  // Это нужно чтобы для дочерних элементов событие выделения  // происходило перед событием получения фокуса.  onBlurHandler() {    this.timeOutId = setTimeout(() => {      this.setState({        isOpen: false      });    });  }  // Не закрывать выпадающий список при получении фокуса дочерним элементом.
+
+  }, {
+    key: 'onFocusHandler',
+    value: function onFocusHandler() {
+      clearTimeout(this.timeOutId);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      // React помогает нам благодаря всплытию потери фокуса и
+      // фокусировке событий на родителе.   
+      return React.createElement(
+        'div',
+        { onBlur: this.onBlurHandler,
+          onFocus: this.onFocusHandler },
+        React.createElement(
+          'button',
+          { onClick: this.onClickHandler,
+            'aria-haspopup': 'true',
+            'aria-expanded': this.state.isOpen },
+          'Select an option'
+        ),
+        this.state.isOpen && React.createElement(
+          'ul',
+          null,
+          React.createElement(
+            'li',
+            null,
+            'Option 1'
+          ),
+          React.createElement(
+            'li',
+            null,
+            'Option 2'
+          ),
+          React.createElement(
+            'li',
+            null,
+            'Option 3'
+          )
+        )
+      );
+    }
+  }]);
+
+  return BlurExample;
+}(React.Component);
+
+var test = React.createElement(
+  'div',
+  { id: getRandom(0, 100) },
+  ' test '
+);
 var domContainer = document.querySelector('#like_button_container');
-ReactDOM.render(React.createElement(LikeButton, null), domContainer);
+ReactDOM.render(React.createElement(BlurExample, null), domContainer);

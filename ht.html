@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +8,180 @@
     <script src="Presets/babel.min.js"></script>
     <script src="Presets/react.development.js"></script>
     <script src="Presets/react-dom.development.js"></script>
+    <script src="Presets/bigFunc.js"></script>
+    <script src="Presets/velocity.min.js"></script>
+    <script src="Presets/splide.min.js"></script>
+    <link rel="stylesheet" href="css/font/Gilroy.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/splide.min.css">
+    <link rel="stylesheet" href="css/splide-sea-green.min.css">
     <title>CAD</title>
 </head>
+
 <body>
-    <div id="like_button_container"></div>
+    <div class="moduleWindow">
+        <div class="container container-l">
+            Test
+        </div>
+    </div>
+    <header id="mHeader">
+        <div class="container container-l">
+            <div id="logo">MPU Team</div>
+            <div class="container" id="mHeadContainer">
+                <div class="mHeadElems"><a href="#main">Главная</a></div>
+                <div class="mHeadElems"><a href="#projects">Проекты</a></div>
+                <div class="mHeadElems"><a href="#about">О нас</a></div>
+                <div class="mHeadElems"><a href="#contact">Контакты</a></div>
+                <div class="mHeadElems"><a href="#teaming">Сотрудничество</a></div>
+            </div>
+        </div>
+    </header>
+    <div id="main" class="">
+        <div id="mainContainer" class="container container-l">
+            <img id="poster" src="imgs/MPU_team.jpg"></img>
+            <div class="container">
+                <h1 style="font-size: 10rem;">Приветствие</h1>
+            </div>
+        </div>
+    </div>
+    <div id="projects" class="section">
+
+        <div id="projContainer" class="container container-l" style="flex-direction: column;">
+            <h1>Проекты</h1>
+            <!-- <div class="container container-m" style="flex-direction: column;"> -->
+            <div class="splide">
+                <div class="splide__track">
+                    <div class="splide__list">
+                        <div class="splide__slide projectList">
+                            <img src="imgs/Приложение 1.png" id="mSlide-1" alt="">
+                            <div class="projectInfo hiddenProj">
+                                <div class="container">
+                                    <h2>Инфо</h2>
+                                    <button class="readMoreBut">Подробнее</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="splide__slide projectList">
+                            <img src="imgs/Приложение 2.png" id="mSlide-2" alt="">
+                            <div class="projectInfo hiddenProj">
+                                <div class="container">
+                                    <h2>Инфо 3</h2>
+                                    <button class="readMoreBut">Подробнее</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="splide__slide projectList">
+                            <img src="imgs/Приложение 3.png" id="mSlide-3" alt="">
+                            <div class="projectInfo hiddenProj">
+                                <div class="container">
+                                    <h2>Инфо 2</h2>
+                                    <button class="readMoreBut">Подробнее</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="splide__slide projectList">
+                            <img src="imgs/Приложение 4.png" id="mSlide-4" alt="">
+                            <div class="projectInfo hiddenProj">
+                                <div class="container">
+                                    <h2>Инфо</h2>
+                                    <button class="readMoreBut">Подробнее</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- </div> -->
+        </div>
+    </div>
+    <div id="about" class="section">
+        <div class="skewBackground">
+            <!-- <div style="position:relative"> -->
+            <div class="skewGray skewElem"></div>
+            <div class="skewDarkGray skewElem"></div>
+            <!-- </div> -->
+        </div>
+        <div class="container container-l">
+            <h1>О нас</h1>
+
+        </div>
+    </div>
+    <div id="contact" class="section">
+        <div class="container container-l">
+            <h1>Контакты</h1>
+        </div>
+    </div>
+    <div id="teaming" class="section">
+        <div class="container container-l">
+            <h1>Сотрудничество</h1>
+        </div>
+    </div>
+    <div id="mFoot" class="">
+        <div class="container container-l">
+            footer
+        </div>
+    </div>
+    <!-- <div id="like_button_container"></div> -->
     <!-- <script src="like.js"></script> -->
-    <script src="test.js"></script>   
+
+    <!-- <script src="test.js"></script>    -->
+    <script>
+        Velocity.defaults.duration = 0
+        let aHeight = document.documentElement.clientHeight;
+        let module = document.getElementsByClassName("moduleWindow")[0]
+        module.onclick = () => {
+            module.velocity({
+                opacity: 0
+            }, {
+                duration: 300
+            }).velocity({
+                display: "none"
+            })
+        }
+        let readButtons = Array.from(document.querySelectorAll(".readMoreBut"))
+        readButtons.forEach(but => {
+            but.onclick = () => {
+                module.velocity({
+                    display: "flex"
+                }).velocity({
+                    opacity: [1, 0],
+
+                }, {
+                    duration: 300
+                })
+            }
+        })
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        let projectSlides = Array.from(document.querySelectorAll(".projectList"))
+        let spl = new Splide('.splide', {
+            type: 'loop',
+            cover: true,
+            heightRatio: 0.5,
+            rewind: true,
+            fixedWidth: 100,
+            fixedHeight: 64,
+            isNavigation: true,
+            gap: 10,
+            focus: 'center',
+            pagination: false,
+            cover: true,
+            breakpoints: {
+                '600': {
+                    fixedWidth: 66,
+                    fixedHeight: 40,
+                }
+            }
+        });
+        spl.mount()
+    </script>
 </body>
+
 </html>

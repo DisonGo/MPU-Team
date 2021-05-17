@@ -8,17 +8,3 @@ function getRandCSSColor() {
 function log(any){
     console.log(any);
 }
-function transorm_obj_to_bin_vector(obj){
-    let newVector [];
-    let newSubVec [];
-    for(let i=0;i<obj.lenght;i++){
-        if(obj.charCodeAt(i)!=10){
-            if(obj.charCodeAt(i)==32)newSubVec.push(0)
-            else newSubVec.push(1)
-        }else{
-            newVector.push(newSubVec)
-            newSubVec = [];
-        }
-    }
-    return newVector;
-}

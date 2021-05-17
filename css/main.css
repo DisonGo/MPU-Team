@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
+a {
+    font-family: 'Gilroy', light;
+    text-decoration: none;
+    color: white;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    color: white;
+    font-size: 30px;
+    font-family: 'Gilroy', light;
+    /* overflow:hidden; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-image: url("../imgs/CAD Fon 2.png");
+}
+.projectInfo{
+    color: black;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40%;
+    background:  rgb(255, 103, 1);;
+    transition: 0.2s;
+    padding:0 40px ;
+}
+.projectInfo .readMoreBut{
+    outline: none;
+    cursor: pointer;
+    font-size: 20px;
+    height: 2.5em;
+    background-color: coral;
+    border: none;
+    border-radius: 4px;
+    width: 7em;
+
+}
+.projectInfo .container {
+    flex-direction: column;
+    width: 100%;
+}
+.projectList .projectInfo{   
+    transform: translateY(100%);
+}
+.projectList:hover .projectInfo{
+    transform: translateY(0);
+}
+.skewBackground{
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 30%;
+}
+.skewElem{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.skewGray {
+	transform: skewX(45deg);
+    width: 200%;
+    background-color: rgb(187, 187, 187);
+}
+.skewGray > * {
+	transform: skewX(-45deg); 
+}
+.skewDarkGray {
+    transform: skewX(45deg); 
+    background-color: rgb(87, 87, 87);
+}
+.skewDarkGray > * {
+	transform: skewX(-45deg); 
+}
+.container {
+    display: flex;
+    margin: 0 auto;
+}
+
+.container-l {
+    width: 90%;
+}
+
+.container-ml {
+    width: 75%;
+}
+
+.container-m {
+    width: 60%;
+}
+
+.container-sm {
+    width: 45%;
+}
+
+.container-s {
+    width: 30%;
+}
+#mHeader>.container{
+    height: 100%;
+}
+#mHeadContainer {
+    width: 100%;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    font-size: 30px;
+    height: 100%;
+    gap: 50px;
+
+}
+
+#logo {
+    height: 100%;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    font-size: 70px;
+    position: absolute;
+    margin-left: 4px;
+
+}
+
+.mHeadElems {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* width: 100px; */
+    height: 100%;
+}
+
+.mHeadElems>a {
+    /* display: block; */
+    height: 40px;
+    transition: .2s;
+}
+
+.mHeadElems>a:hover {
+    /* filter: invert(1); */
+    /* font-weight: 700; */
+    color: rgb(255, 103, 1);
+    transition: .1s;
+}
+
+#mainContainer {
+    flex-wrap: wrap;
+    /* height: 100%; */
+    flex-direction: column;
+    /* background: rgb(165, 165, 165); */
+}
+
+#mHeader {
+    height: 100px;
+    width: 100%;
+    background: rgba(0,0,0, 1);
+    /* opacity: .6; */
+    position: relative;
+}
+#poster{
+    display: block;
+}
+#main {
+    width: 100%;
+    height: 900px;
+    /* background: rgb(165, 165, 165); */
+    /* opacity: .6; */
+}
+.section{
+    background-color: white;
+    color: black;
+    height: 1000px;
+    margin: 50px 0 ;
+}
+.section h1{
+    margin: 20px 0;
+}
+.moduleWindow{
+    position: fixed;
+    display: none;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    color: black;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    opacity: 0;
+}
+.moduleWindow .container{
+    background-color: white;
+    min-height: 300px;
+}
+#projects {
+    height: auto;
+}
+#mFoot {
+    width: 100%;
+    height: 170px;
+    color: rgb(143, 143, 143);
+    background: rgb(32, 32, 32);
+    /* opacity: .6; */
+}
+#about {
+    position: relative;
+    overflow: hidden;
+}
