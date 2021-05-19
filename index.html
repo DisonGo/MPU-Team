@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="Presets/babel.min.js"></script>
-    <script src="Presets/react.development.js"></script>
-    <script src="Presets/react-dom.development.js"></script>
+    <!-- <script src="Presets/babel.min.js"></script> -->
+    <!-- <script src="Presets/react.development.js"></script> -->
+    <!-- <script src="Presets/react-dom.development.js"></script> -->
     <script src="Presets/bigFunc.js"></script>
     <script src="Presets/velocity.min.js"></script>
     <script src="Presets/splide.min.js"></script>
@@ -24,6 +24,11 @@
             Test
         </div>
     </div>
+    <button id="scrollUpBtn" disabled><a href="#mHeader">
+            <div class="container">
+                Наверх
+            </div>
+        </a></button>
     <header id="mHeader">
         <div class="container container-l">
             <div id="logo">MPU Team</div>
@@ -32,7 +37,7 @@
                 <div class="mHeadElems"><a href="#projects">Проекты</a></div>
                 <div class="mHeadElems"><a href="#about">О нас</a></div>
                 <div class="mHeadElems"><a href="#contact">Контакты</a></div>
-                <div class="mHeadElems"><a href="#teaming">Сотрудничество</a></div>
+                <!-- <div class="mHeadElems"><a href="#teaming">Сотрудничество</a></div> -->
             </div>
         </div>
     </header>
@@ -48,72 +53,82 @@
 
         <div id="projContainer" class="container container-l" style="flex-direction: column;">
             <h1>Проекты</h1>
-            <!-- <div class="container container-m" style="flex-direction: column;"> -->
-            <div class="splide">
-                <div class="splide__track">
-                    <div class="splide__list">
-                        <div class="splide__slide projectList">
-                            <img src="imgs/Приложение 1.png" id="mSlide-1" alt="">
-                            <div class="projectInfo hiddenProj">
-                                <div class="container">
-                                    <h2>Инфо</h2>
-                                    <button class="readMoreBut">Подробнее</button>
-                                </div>
+        </div>
+        <div class="splide">
+            <div class="splide__track">
+                <div class="splide__list">
+                    <div class="splide__slide projectList">
+                        <img src="imgs/Приложение 1.png" id="mSlide-1" alt="">
+                        <div class="projectInfo">
+                            <div class="container">
+                                <h2>Проект 1</h2>
+                                <div class="projectText">Lorem, ipsub olor et neque sunt veniam blanditiis est, nulla
+                                    dicta illum cum!Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae
+                                    asperiores vitae corrupti officia suscipit eum nesciunt tenetur magnam veritatis,
+                                    dolor et neque sunt veniam blanditiis est, nulla dicta illum cum!</div>
+                                <button class="readMoreBut">Подробнее</button>
                             </div>
                         </div>
-                        <div class="splide__slide projectList">
-                            <img src="imgs/Приложение 2.png" id="mSlide-2" alt="">
-                            <div class="projectInfo hiddenProj">
-                                <div class="container">
-                                    <h2>Инфо 3</h2>
-                                    <button class="readMoreBut">Подробнее</button>
-                                </div>
+                    </div>
+                    <div class="splide__slide projectList">
+                        <img src="imgs/Приложение 2.png" id="mSlide-2" alt="">
+                        <div class="projectInfo">
+                            <div class="container">
+                                <h2>Проект 2</h2>
+                                <div class="projectText">Lorem, ipsub olor et neque sunt veniam blanditiis est, nulla
+                                    dicta illum cum!Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae
+                                    asperiores vitae corrupti officia suscipit eum nesciunt tenetur magnam veritatis,
+                                    dolor et neque sunt veniam blanditiis est, nulla dicta illum cum!</div>
+                                <button class="readMoreBut">Подробнее</button>
                             </div>
                         </div>
-                        <div class="splide__slide projectList">
-                            <img src="imgs/Приложение 3.png" id="mSlide-3" alt="">
-                            <div class="projectInfo hiddenProj">
-                                <div class="container">
-                                    <h2>Инфо 2</h2>
-                                    <button class="readMoreBut">Подробнее</button>
-                                </div>
+                    </div>
+                    <div class="splide__slide projectList">
+                        <img src="imgs/Приложение 3.png" id="mSlide-3" alt="">
+                        <div class="projectInfo">
+                            <div class="container">
+                                <h2>Проект 3</h2>
+                                <button class="readMoreBut">Подробнее</button>
                             </div>
                         </div>
-                        <div class="splide__slide projectList">
-                            <img src="imgs/Приложение 4.png" id="mSlide-4" alt="">
-                            <div class="projectInfo hiddenProj">
-                                <div class="container">
-                                    <h2>Инфо</h2>
-                                    <button class="readMoreBut">Подробнее</button>
-                                </div>
+                    </div>
+                    <div class="splide__slide projectList">
+                        <img src="imgs/Приложение 4.png" id="mSlide-4" alt="">
+                        <div class="projectInfo">
+                            <div class="container">
+                                <h2>Проект 4</h2>
+                                <button class="readMoreBut">Подробнее</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- </div> -->
         </div>
     </div>
     <div id="about" class="section">
         <div class="skewBackground">
-            <!-- <div style="position:relative"> -->
             <div class="skewGray skewElem"></div>
             <div class="skewDarkGray skewElem"></div>
-            <!-- </div> -->
         </div>
         <div class="container container-l">
             <h1>О нас</h1>
-
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus sunt quaerat nemo? Deserunt, quasi. Iure,
+            corrupti. Consequuntur dolorem iure atque veritatis quidem, eius excepturi? Ipsa, pariatur? Ea sint officiis
+            assumenda!
         </div>
     </div>
     <div id="contact" class="section">
         <div class="container container-l">
             <h1>Контакты</h1>
-        </div>
-    </div>
-    <div id="teaming" class="section">
-        <div class="container container-l">
-            <h1>Сотрудничество</h1>
+            <div class="links">
+                <p>Телефон: +7 (123)456-78-90
+                    Почта: example@mail.ru</p>
+                <div class="container" style="gap:10px">
+                    <a href=""><img src="imgs/vk.png" alt="" class="linkBut"></a>
+                    <a href=""><img src="imgs/youtube.png" alt="" class="linkBut"></a>
+                    <a href=""><img src="imgs/instagram.jpg" alt="" class="linkBut"></a>
+                </div>
+            </div>
         </div>
     </div>
     <div id="mFoot" class="">
@@ -121,10 +136,11 @@
             footer
         </div>
     </div>
-    <!-- <div id="like_button_container"></div> -->
-    <!-- <script src="like.js"></script> -->
-
-    <!-- <script src="test.js"></script>    -->
+    <!-- <div id="teaming" class="section">
+        <div class="container container-l">
+            <h1>Сотрудничество</h1>
+        </div>
+    </div> -->
     <script>
         Velocity.defaults.duration = 0
         let aHeight = document.documentElement.clientHeight;
@@ -154,17 +170,28 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
             });
         });
+        window.onscroll = function () {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollUpBtn.style.opacity = 1;
+                scrollUpBtn.lastChild.style.cursor = "pointer";
+                scrollUpBtn.disabled = false
+            } else {
+                scrollUpBtn.style.opacity = 0;
+                scrollUpBtn.lastChild.style.cursor = "default";
+                scrollUpBtn.disabled = true
+            }
+        };
+
         let projectSlides = Array.from(document.querySelectorAll(".projectList"))
         let spl = new Splide('.splide', {
             type: 'loop',
             cover: true,
-            heightRatio: 0.5,
+            heightRatio: 0.45,
             rewind: true
         });
         spl.mount()
