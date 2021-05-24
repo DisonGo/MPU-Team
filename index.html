@@ -45,7 +45,7 @@
         <div id="mainContainer" class="container container-l">
             <img id="poster" src="imgs/MPU_team.jpg"></img>
             <div class="container">
-                <h1 style="font-size: 10rem;">Приветствие</h1>
+                <h1 style="font-size: 10rem;" id="welcome">Приветствие</h1>
             </div>
         </div>
     </div>
@@ -124,9 +124,18 @@
                 <p>Телефон: +7 (123)456-78-90
                     Почта: example@mail.ru</p>
                 <div class="container" style="gap:10px">
-                    <a href=""><img src="imgs/vk.png" alt="" class="linkBut"></a>
-                    <a href=""><img src="imgs/youtube.png" alt="" class="linkBut"></a>
-                    <a href=""><img src="imgs/instagram.jpg" alt="" class="linkBut"></a>
+                    <a href="" class="linkButContainer">
+                        <img src="imgs/vk.png" alt="" class="linkBut">
+                        <div class="linkButHoverImg"></div>
+                    </a>
+                    <a href="" class="linkButContainer">
+                        <img src="imgs/youtube.png" alt="" class="linkBut">
+                        <div class="linkButHoverImg"></div>
+                    </a>
+                    <a href="" class="linkButContainer">
+                        <img src="imgs/instagram.jpg" alt="" class="linkBut">
+                        <div class="linkButHoverImg"></div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -144,6 +153,8 @@
     <script>
         Velocity.defaults.duration = 0
         let aHeight = document.documentElement.clientHeight;
+        main.style.height = (aHeight - 100)+"px"
+        mainContainer.style.maxHeight = (aHeight - 100)+"px"
         let module = document.getElementsByClassName("moduleWindow")[0]
         module.onclick = () => {
             module.velocity({

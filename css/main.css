@@ -17,16 +17,20 @@ body {
     background-attachment: fixed;
     background-image: url("../imgs/CAD Fon 2.png");
 }
-.projectInfo{
+
+.projectInfo {
     color: black;
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 40%;
-    background:  rgb(255, 103, 1);;
+    height: 50%;
+    background: rgb(255, 103, 1);
+    ;
     transition: 0.2s;
 }
-.projectInfo .readMoreBut{
+
+.projectInfo .readMoreBut {
+    min-height: 2.5em;
     outline: none;
     cursor: pointer;
     font-size: 20px;
@@ -37,7 +41,8 @@ body {
     width: 7em;
     transition: .2s;
 }
-.projectInfo> .container{
+
+.projectInfo>.container {
     flex-direction: column;
     margin: 40px;
     height: 100%;
@@ -46,46 +51,57 @@ body {
     position: relative;
     justify-content: space-between;
 }
-.projectInfo> .container > h2{
+
+.projectInfo>.container>h2 {
     margin: 0;
 }
-.projectInfo .readMoreBut:hover{
+
+.projectInfo .readMoreBut:hover {
     filter: invert(1);
 }
-.projectList .projectInfo{   
+
+.projectList .projectInfo {
     transform: translateY(100%);
 }
-.projectList:hover .projectInfo{
+
+.projectList:hover .projectInfo {
     transform: translateY(0);
 }
-.skewBackground{
+
+.skewBackground {
     position: absolute;
     right: 0;
     height: 100%;
     width: 15%;
     z-index: 1;
 }
-.skewElem{
+
+.skewElem {
     height: 100%;
     width: 100%;
     position: absolute;
 }
+
 .skewGray {
-	transform: skewX(45deg);
+    transform: skewX(45deg);
     width: 200%;
     left: 100%;
     background-color: rgb(187, 187, 187);
 }
-.skewGray > * {
-	transform: skewX(-45deg); 
+
+.skewGray>* {
+    transform: skewX(-45deg);
 }
+
 .skewDarkGray {
-    transform: skewX(45deg); 
+    transform: skewX(45deg);
     background-color: rgb(87, 87, 87);
 }
-.skewDarkGray > * {
-	transform: skewX(-45deg); 
+
+.skewDarkGray>* {
+    transform: skewX(-45deg);
 }
+
 .container {
     display: flex;
     margin: 0 auto;
@@ -110,9 +126,11 @@ body {
 .container-s {
     width: 30%;
 }
-#mHeader>.container{
+
+#mHeader>.container {
     height: 100%;
 }
+
 #mHeadContainer {
     width: 100%;
     justify-content: flex-end;
@@ -121,6 +139,11 @@ body {
     height: 100%;
     gap: 50px;
 
+}
+#welcome{
+    margin: 0;
+    height: 100%;
+    vertical-align: middle;
 }
 
 #logo {
@@ -155,42 +178,56 @@ body {
 #mainContainer {
     flex-wrap: wrap;
     flex-direction: column;
+    align-content: space-between;
+    height: 100%;
+}
+#mainContainer>.container{
+    flex-grow: 1;
 }
 
 #mHeader {
     height: 100px;
     width: 100%;
-    background: rgba(0,0,0, 1);
+    background: rgba(0, 0, 0, 1);
     position: relative;
 }
-#poster{
+
+#poster {
     display: block;
+    width: 100%;
 }
+
 #main {
     width: 100%;
     height: 900px;
 }
-.section{
+
+.section {
     background-color: white;
     color: black;
     height: auto;
     max-height: 100%;
-    margin: 50px 0 ;
+    margin: 50px 0;
 }
-.section>.container{
+
+.section>.container {
     padding: 35px 0;
 }
-.section h1{
+
+.section h1 {
     margin: 10px 0;
     margin-top: 0;
 }
-.splide{
+
+.splide {
     padding-top: 0;
 }
+
 .projectText {
     font-size: 24px;
 }
-.moduleWindow{
+
+.moduleWindow {
     position: fixed;
     display: none;
     flex-wrap: wrap;
@@ -203,75 +240,109 @@ body {
     z-index: 1000;
     opacity: 0;
 }
-.moduleWindow .container{
+
+.moduleWindow .container {
     background-color: white;
     min-height: 300px;
 }
+
 #projects {
     height: auto;
 }
+
 #mFoot {
     width: 100%;
     height: 170px;
     color: rgb(143, 143, 143);
     background: rgb(32, 32, 32);
 }
+
 #about {
     position: relative;
     overflow: hidden;
 }
-#about >.container{
+
+#about>.container {
     position: relative;
     flex-direction: column;
     flex-wrap: wrap;
     z-index: 2;
 }
+
 #scrollUpBtn {
     opacity: 0;
     width: auto;
     height: auto;
     position: fixed;
     bottom: 20px;
-    right: 30px; 
-    z-index: 99; 
-    border: 1px solid black; 
-    outline: none; 
-    background-color: #ff6701; 
+    right: 30px;
+    z-index: 99;
+    border: 1px solid black;
+    outline: none;
+    background-color: #ff6701;
     padding: 0;
-    cursor: pointer; 
-    border-radius: 5px; 
-    font-size: 18px; 
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
     transition: .2s;
     cursor: default;
-  }
-  
-  #scrollUpBtn:hover {
-    background-color: #555; 
-  }
-  #scrollUpBtn>a{
+}
+
+#scrollUpBtn:hover {
+    background-color: #555;
+}
+
+#scrollUpBtn>a {
     width: 6em;
     height: 3em;
     display: block;
     cursor: default;
     color: black;
-  }
-  #scrollUpBtn>a>.container{
+}
+
+#scrollUpBtn>a>.container {
     height: 100%;
     flex-direction: column;
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
-  }
-  #contact > .container{
-      flex-direction: column;
-      
-  }
-  .links{
-      width: 400px;
-  }
-  .linkBut{
-      width: 80px;
-      height: 80px;
-      display: block;   
-      border-radius: 40px;
-  }
+}
+
+#contact>.container {
+    flex-direction: column;
+
+}
+
+.links {
+    width: 400px;
+}
+
+.linkBut {
+    width: 80px;
+    height: 80px;
+    display: block;
+}
+
+.linkButContainer {
+    display: block;
+    border-radius: 40px;
+    overflow: hidden;
+    position: relative;
+}
+.linkButHoverImg{
+    position: absolute;
+    opacity: 0;
+    transition: .2s;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url(../imgs/link.png);
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.linkButHoverImg:hover{
+    opacity: 1;
+}
