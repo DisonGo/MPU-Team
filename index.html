@@ -21,7 +21,7 @@
 <body>
     <div class="moduleWindow">
         <div class="container container-l">
-            Test
+            <div class="container container-l" style="flex-direction: column;" id="moduleWindowInnerContainer"></div>
         </div>
     </div>
     <button id="scrollUpBtn" disabled><a href="#mHeader">
@@ -56,51 +56,7 @@
         </div>
         <div class="splide">
             <div class="splide__track">
-                <div class="splide__list">
-                    <div class="splide__slide projectList">
-                        <img src="imgs/Приложение 1.png" id="mSlide-1" alt="">
-                        <div class="projectInfo">
-                            <div class="container">
-                                <h2>Проект 1</h2>
-                                <div class="projectText">Lorem, ipsub olor et neque sunt veniam blanditiis est, nulla
-                                    dicta illum cum!Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae
-                                    asperiores vitae corrupti officia suscipit eum nesciunt tenetur magnam veritatis,
-                                    dolor et neque sunt veniam blanditiis est, nulla dicta illum cum!</div>
-                                <button class="readMoreBut">Подробнее</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="splide__slide projectList">
-                        <img src="imgs/Приложение 2.png" id="mSlide-2" alt="">
-                        <div class="projectInfo">
-                            <div class="container">
-                                <h2>Проект 2</h2>
-                                <div class="projectText">Lorem, ipsub olor et neque sunt veniam blanditiis est, nulla
-                                    dicta illum cum!Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae
-                                    asperiores vitae corrupti officia suscipit eum nesciunt tenetur magnam veritatis,
-                                    dolor et neque sunt veniam blanditiis est, nulla dicta illum cum!</div>
-                                <button class="readMoreBut">Подробнее</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="splide__slide projectList">
-                        <img src="imgs/Приложение 3.png" id="mSlide-3" alt="">
-                        <div class="projectInfo">
-                            <div class="container">
-                                <h2>Проект 3</h2>
-                                <button class="readMoreBut">Подробнее</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="splide__slide projectList">
-                        <img src="imgs/Приложение 4.png" id="mSlide-4" alt="">
-                        <div class="projectInfo">
-                            <div class="container">
-                                <h2>Проект 4</h2>
-                                <button class="readMoreBut">Подробнее</button>
-                            </div>
-                        </div>
-                    </div>
+                <div class="splide__list" id="projectSlider">
                 </div>
             </div>
         </div>
@@ -150,63 +106,7 @@
             <h1>Сотрудничество</h1>
         </div>
     </div> -->
-    <script>
-        Velocity.defaults.duration = 0
-        let aHeight = document.documentElement.clientHeight;
-        main.style.height = (aHeight - 100)+"px"
-        mainContainer.style.maxHeight = (aHeight - 100)+"px"
-        let module = document.getElementsByClassName("moduleWindow")[0]
-        module.onclick = () => {
-            module.velocity({
-                opacity: 0
-            }, {
-                duration: 300
-            }).velocity({
-                display: "none"
-            })
-        }
-        let readButtons = Array.from(document.querySelectorAll(".readMoreBut"))
-        readButtons.forEach(but => {
-            but.onclick = () => {
-                module.velocity({
-                    display: "flex"
-                }).velocity({
-                    opacity: [1, 0],
-
-                }, {
-                    duration: 300
-                })
-            }
-        })
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-        window.onscroll = function () {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                scrollUpBtn.style.opacity = 1;
-                scrollUpBtn.lastChild.style.cursor = "pointer";
-                scrollUpBtn.disabled = false
-            } else {
-                scrollUpBtn.style.opacity = 0;
-                scrollUpBtn.lastChild.style.cursor = "default";
-                scrollUpBtn.disabled = true
-            }
-        };
-
-        let projectSlides = Array.from(document.querySelectorAll(".projectList"))
-        let spl = new Splide('.splide', {
-            type: 'loop',
-            cover: true,
-            heightRatio: 0.45,
-            rewind: true
-        });
-        spl.mount()
-    </script>
+    <script src="main.js"></script>
 </body>
 
 </html>
