@@ -81,10 +81,48 @@ body {
     height: 100%;
     width: 100%;
     position: absolute;
+    transform: translateX(100%) skewX(45deg);
+    /* transition: .2s easeOutElastic; */
 }
+.skewBackground:hover .skewElem{
+    animation: easeOutElastic .5s;
+    transform: translateX(-100%) skewX(45deg);
+}
+@keyframes easeOutElastic {
+	0% {
+		transform: translateX(0%) skewX(45deg);
+	}
 
+	16% {
+		transform: translateX(-132.27%) skewX(45deg);
+	}
+
+	28% {
+		transform: translateX(-86.88%) skewX(45deg);
+	}
+
+	44% {
+		transform: translateX(-104.63%) skewX(45deg) ;
+	}
+
+	59% {
+		transform: translateX(-98.36%)skewX(45deg) ;
+	}
+
+	73% {
+		transform: translateX(-100.58%) skewX(45deg);
+	}
+
+	88% {
+		transform: translateX(-99.8%) skewX(45deg) ;
+	}
+
+	100% {
+		transform: translateX(-100%) skewX(45deg);
+	}
+
+}
 .skewGray {
-    transform: skewX(45deg);
     width: 200%;
     left: 100%;
     background-color: rgb(187, 187, 187);
@@ -95,7 +133,6 @@ body {
 }
 
 .skewDarkGray {
-    transform: skewX(45deg);
     background-color: rgb(87, 87, 87);
 }
 
