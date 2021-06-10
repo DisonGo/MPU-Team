@@ -1,7 +1,7 @@
 Velocity.defaults.duration = 0
 let aHeight = document.documentElement.clientHeight;
 main.style.height = (aHeight - 100) + "px"
-mainContainer.style.maxHeight = (aHeight - 100) + "px"
+// mainContainer.style.maxHeight = (aHeight - 100) + "px"
 let module = document.getElementsByClassName("moduleWindow")[0]
 module.onclick = () => {
     module.velocity({
