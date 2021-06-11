@@ -12,7 +12,7 @@ module.onclick = () => {
         display: "none"
     })
 }
-module.container = document.getElementById('moduleWindowInnerContainer')
+module.container = document.getElementsByClassName('moduleWindowInnerContainer')[0]
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -124,6 +124,8 @@ function loadProjects(data, list) {
 
 function loadModuleWindow(data) {
     module.container.innerHTML = ''
+    let dataContainer = document.createElement('div')
+    dataContainer.classList.add('container','dataContainer')
     let header = document.createElement("h2")
     header.innerHTML = data.name
     let innerImg = document.createElement("img")
@@ -134,9 +136,12 @@ function loadModuleWindow(data) {
     let longDescr = document.createElement("p")
     longDescr.style.fontSize = 0.7 + 'em'
     longDescr.innerHTML = data.longDescr
-    module.container.appendChild(header)
-    module.container.appendChild(innerImg)
-    module.container.appendChild(longDescr)
+    longDescr.style.whiteSpace = 'pre-wrap'
+    longDescr.style.marginBottom = "15px"
+    module.container.appendChild(dataContainer)
+    dataContainer.appendChild(header)
+    dataContainer.appendChild(innerImg)
+    dataContainer.appendChild(longDescr)
 }
 loadProjects(projects, projectList)
 let readButtons = Array.from(document.querySelectorAll(".readMoreBut"))

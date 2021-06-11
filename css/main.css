@@ -71,7 +71,7 @@ body {
 
 .skewBackground {
     position: absolute;
-    right: 0;
+    right: -15%;
     height: 100%;
     width: 15%;
     z-index: 1;
@@ -82,11 +82,11 @@ body {
     width: 100%;
     position: absolute;
     transform: translateX(100%) skewX(45deg);
-    /* transition: .2s easeOutElastic; */
+    transition: 1.5s ease-in-out;
 }
 .skewBackground:hover .skewElem{
-    animation: easeOutElastic .5s;
-    transform: translateX(-100%) skewX(45deg);
+    /* animation: easeOutElastic 1.5s; */
+    transform: translateX(-50%) skewX(45deg);
 }
 @keyframes easeOutElastic {
 	0% {
@@ -125,7 +125,7 @@ body {
 .skewGray {
     width: 200%;
     left: 100%;
-    background-color: rgb(187, 187, 187);
+    background-color: rgb(219, 217, 217);
 }
 
 .skewGray>* {
@@ -133,7 +133,7 @@ body {
 }
 
 .skewDarkGray {
-    background-color: rgb(87, 87, 87);
+    background-color: rgb(173, 173, 173);
 }
 
 .skewDarkGray>* {
@@ -265,13 +265,23 @@ body {
     font-size: 24px;
     margin-bottom: 10px;
 }
-
+.moduleWindowInnerContainer{
+}
+.moduleWindowOuterContainer{
+}
+.dataContainer{
+    /* margin-bottom: 15px; */
+    justify-content: space-around;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 15px;
+}
 .moduleWindow {
+    overflow: scroll;
+    overflow-x: hidden;
     position: fixed;
     display: none;
     flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
     color: black;
     background-color: rgba(0, 0, 0, 0.9);
     width: 100%;
