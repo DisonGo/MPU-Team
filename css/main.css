@@ -398,7 +398,6 @@ body {
 .userCard{
     width: 350px;
     height: 450px;
-    /* background-color: aquamarine; */
     position: relative;
     padding: 5px;
     transform: scale(0.8);
