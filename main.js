@@ -148,26 +148,27 @@ function createProjElem(data, list) {
     let container = document.createElement("div")
     container.classList.add("container")
 
-    projectElem.appendChild(frontImg)
     projectElem.appendChild(info)
 
     info.appendChild(container)
 
-    let header = document.createElement("h2")
+    let header = document.createElement("h4")
     header.innerHTML = data.name
 
-    container.appendChild(header)
-
+    
     let shortText = document.createElement("div")
     shortText.classList.add("projectText")
     shortText.innerHTML = data.shortDescr
-
-    container.appendChild(shortText)
-
+    
+    
     let readBut = document.createElement("button")
     readBut.classList.add("readMoreBut")
     readBut.innerHTML = 'Подробнее'
     readBut.data = data
+
+    container.appendChild(header)
+    container.appendChild(frontImg)
+    container.appendChild(shortText)
     container.appendChild(readBut)
 
     projectElem.header = header
@@ -261,8 +262,12 @@ readButtons.forEach(but => {
 //Arrayfrom(document.querySelectorAll(".projectList"))
 let prjSpl = new Splide('#projectsSplide', {
     type: 'loop',
-    cover: true,
-    heightRatio: 0.45,
+    // cover: true,
+    perPage :3,
+    perMove:1,
+    // heightRatio : 0.2,
+    gap : "2rem",
+    height:"auto",
     rewind: true
 });
 let usrSpl = new Splide('#usersSplide', {

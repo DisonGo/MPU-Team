@@ -20,14 +20,16 @@ body {
 
 .projectInfo {
     color: black;
-    position: absolute;
+    /* position: absolute; */
     bottom: 0;
     width: 100%;
     height: auto;
+    border-radius: 5px;
     border-bottom-left-radius:4px ;
     border-bottom-right-radius:4px ;
-    background: rgb(255, 103, 1);
+    background: rgba(255, 255, 255, 0);
     transition: 0.2s;
+    min-height: 550px;
 }
 
 .projectInfo .readMoreBut {
@@ -36,37 +38,43 @@ body {
     cursor: pointer;
     font-size: 20px;
     height: 2.5em;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(255, 148, 27);
     border: none;
     border-radius: 4px;
     width: 7em;
     transition: .2s;
+    margin-top: auto;
 }
 
 .projectInfo>.container {
     flex-direction: column;
-    margin: 40px;
-    height: 100%;
-    width: calc(100% - 80px);
-    height: calc(100% - 80px);
+    align-items: center;
+    width: 100%;
+    height: 530px;
     position: relative;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 
-.projectInfo>.container>h2 {
-    margin: 0;
+.projectInfo>.container>h4 {
+    margin: 1rem 0;
+    height: 2.4rem;
+    text-align: center;
+    font-size: 1.5rem;
 }
 
 .projectInfo .readMoreBut:hover {
     filter: invert(1);
 }
-
-.projectList .projectInfo {
-    transform: translateY(100%);
+.projectInfo>.container>img{
+    display: block;
+    width: calc(95% - 2px);
+    height: 300px;
+    border-radius: 5px;
+    border: 1px solid rgb(187, 187, 187)
 }
-
-.projectList:hover .projectInfo {
-    transform: translateY(0);
+.projectText {
+    font-size: 1.1rem;
+    margin: 15px;
 }
 
 .skewBackground {
@@ -85,7 +93,6 @@ body {
     transition: 1.5s ease-in-out;
 }
 .skewBackground:hover .skewElem{
-    /* animation: easeOutElastic 1.5s; */
     transform: translateX(-50%) skewX(45deg);
 }
 @keyframes easeOutElastic {
@@ -180,7 +187,6 @@ body {
 }
 #welcome{
     margin: 0;
-    /* height: 100%; */
     vertical-align: middle;
 }
 
@@ -261,16 +267,8 @@ body {
     padding-top: 0;
 }
 
-.projectText {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-.moduleWindowInnerContainer{
-}
-.moduleWindowOuterContainer{
-}
+
 .dataContainer{
-    /* margin-bottom: 15px; */
     justify-content: space-around;
     flex-direction: column;
     width: 100%;
@@ -328,7 +326,7 @@ body {
     z-index: 99;
     border: 1px solid black;
     outline: none;
-    background-color: #ff6701;
+    background-color: rgb(255, 148, 27);
     padding: 0;
     cursor: pointer;
     border-radius: 5px;
