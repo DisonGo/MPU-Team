@@ -395,3 +395,24 @@ body {
 .linkButHoverImg:hover{
     opacity: 1;
 }
+.userCard{
+    width: 350px;
+    height: 450px;
+    /* background-color: aquamarine; */
+    position: relative;
+    padding: 5px;
+    transform: scale(0.8);
+}
+.userCard img{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+}
+.userCard>.container{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.userCard h4{
+    margin: 10px 0;
+}

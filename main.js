@@ -23,43 +23,43 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 let users = [{
     name:'Михаил',
-    surnameL:'Новиков',
+    surname:'Новиков',
     project:'Разработка заданий WS',
     imgLink:'imgs/photos/tIflDwO9e-k.jpg',
 },
 {
     name:'Кристина',
-    surnameL:'Базаева',
+    surname:'Базаева',
     project:'Разработка заданий WS',
     imgLink:'imgs/photos/anon_pic.jpg',
 },
 {
     name:'Алексей',
-    surnameL:'Арановский',
+    surname:'Арановский',
     project:'Разработка заданий WS',
     imgLink:'imgs/photos/aranovskii.jpg',
 },
 {
     name:'Милена',
-    surnameL:'Крюкова',
+    surname:'Крюкова',
     project:'Разработка заданий WS',
     imgLink:'imgs/photos/milena.jpg',
 },
 {
     name:'Павел',
-    surnameL:'Симоненко',
+    surname:'Симоненко',
     project:'Разработка заданий WS',
     imgLink:'imgs/photos/anon_pic.jpg',
 },
 {
     name:'М.',
-    surnameL:'Крюкова',
+    surname:'Крюкова',
     project:'Разработка рамы БПЛА',
     imgLink:'imgs/photos/anon_pic.jpg',
 },
 {
-    name:'Лапикова',
-    surnameL:'А.',
+    name:'А.',
+    surname:'Лапикова',
     project:'Разработка рамы БПЛА',
     imgLink:'imgs/photos/anon_pic.jpg',
 },
@@ -83,6 +83,7 @@ let projects = [{
         Цель проекта - Разработка анимации робота манипулятора и видео-инструкций по сборке.
         Задачи:
         
+     
         Собрать робота манипулятора в Autodesk Inventor.
         Записать видео-инструкции по сборке робота.
         Сделать анимацию робота.
@@ -186,14 +187,46 @@ function createProjElem(data, list) {
     
     return projectElem
 }
+function createUserElem(data,list){
+    let userElem = document.createElement("div")
+    userElem.classList.add('splide__slide')
+    list.appendChild(userElem)
+    let photo = document.createElement("img")
+    photo.src = data.imgLink
+
+    let card = document.createElement("div")
+    card.classList.add("userCard")
+    let Name = document.createElement("h4")
+    Name.innerHTML = data.name + ' ' + data.surname
+    let project = document.createElement("p")
+    project.innerHTML = data.project
+    project.style.textAlign = 'center'
+    
+    let container = document.createElement("div")
+    container.classList.add("container","container-l")
+    userElem.appendChild(card)
+    card.appendChild(container)
+    container.appendChild(photo)
+    container.appendChild(Name)
+    container.appendChild(project)
+    return userElem
+}
 
 let projectList = document.getElementById("projectSlider")
+let usersList = document.getElementById("usersSlider")
 let projectSlides = []
+let userSlides = []
 
 function loadProjects(data, list) {
     data.forEach(proj => {
         let projectElem = createProjElem(proj, list)
         projectSlides.push(projectElem)
+    })
+}
+function loadUsers(data,list){
+    data.forEach(user => {
+        let userElem = createUserElem(user, list)
+        userSlides.push(userElem)
     })
 }
 
@@ -219,6 +252,7 @@ function loadModuleWindow(data) {
     dataContainer.appendChild(longDescr)
 }
 loadProjects(projects, projectList)
+loadUsers(users,usersList)
 let readButtons = Array.from(document.querySelectorAll(".readMoreBut"))
 readButtons.forEach(but => {
     but.onclick = () => {
@@ -234,11 +268,20 @@ readButtons.forEach(but => {
     }
 })
 
-//Array.from(document.querySelectorAll(".projectList"))
-let spl = new Splide('.splide', {
+//Arrayfrom(document.querySelectorAll(".projectList"))
+let prjSpl = new Splide('#projectsSplide', {
     type: 'loop',
     cover: true,
     heightRatio: 0.45,
     rewind: true
 });
-spl.mount()
+let usrSpl = new Splide('#usersSplide', {
+    type: 'loop',
+    perPage :5,
+    perMove:1,
+    autoplay:true, 
+    interval: 4000,
+    rewind: true
+});
+prjSpl.mount()
+usrSpl.mount()
