@@ -51,6 +51,18 @@ let users = [{
     project:'Разработка заданий WS',
     imgLink:'imgs/photos/anon_pic.jpg',
 },
+{
+    name:'М.',
+    surnameL:'Крюкова',
+    project:'Разработка рамы БПЛА',
+    imgLink:'imgs/photos/anon_pic.jpg',
+},
+{
+    name:'Лапикова',
+    surnameL:'А.',
+    project:'Разработка рамы БПЛА',
+    imgLink:'imgs/photos/anon_pic.jpg',
+},
 ]
 let projects = [{
         name: 'Разработка заданий по стандартам WS',
