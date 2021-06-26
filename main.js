@@ -164,7 +164,7 @@ function createProjElem(data, list) {
     let readBut = document.createElement("button")
     readBut.classList.add("readMoreBut")
     readBut.innerHTML = 'Подробнее'
-    readBut.data = data
+    readBut.dataset.project = data.name
 
     container.appendChild(header)
     container.appendChild(frontImg)
@@ -244,20 +244,12 @@ function loadModuleWindow(data) {
 }
 loadProjects(projects, projectList)
 loadUsers(users,usersList)
-let readButtons = Array.from(document.querySelectorAll(".readMoreBut"))
-readButtons.forEach(but => {
-    but.onclick = () => {
-        loadModuleWindow(but.data)
-        module.velocity({
-            display: "flex"
-        }).velocity({
-            opacity: [1, 0],
 
-        }, {
-            duration: 300
-        })
-    }
-})
+function getProjectData(name){
+    return projects.find(val=>{
+        return val.name == name
+    })
+}
 
 //Arrayfrom(document.querySelectorAll(".projectList"))
 let prjSpl = new Splide('#projectsSplide', {
@@ -280,3 +272,18 @@ let usrSpl = new Splide('#usersSplide', {
 });
 prjSpl.mount()
 usrSpl.mount()
+
+let readButtons = Array.from(document.querySelectorAll(".readMoreBut"))
+readButtons.forEach(but => {
+    but.onclick = () => {
+        loadModuleWindow(getProjectData(but.dataset.project))
+        module.velocity({
+            display: "flex"
+        }).velocity({
+            opacity: [1, 0],
+
+        }, {
+            duration: 300
+        })
+    }
+})

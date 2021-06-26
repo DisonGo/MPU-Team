@@ -54,7 +54,9 @@ body {
     position: relative;
     /* justify-content: space-between; */
 }
-
+/* .splide__slide--clone{
+    background-color: rgb(219, 217, 217);
+} */
 .projectInfo>.container>h4 {
     margin: 1rem 0;
     height: 2.4rem;
